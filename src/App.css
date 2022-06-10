@@ -206,3 +206,8 @@ input{
   top: 145px;
   color: lightgray;
 }
+
+.link{
+  color:inherit;
+  text-decoration: none;
+}

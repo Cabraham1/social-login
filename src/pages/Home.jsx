@@ -5,7 +5,7 @@ import Card from "../componets/Card"
 
 const Home = () => {
   return (
-    <div className=''>
+    <div className='home'>
       {posts.map(post=>(
         <Card  key={post.id} post={post}/>
       ))}
