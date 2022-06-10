@@ -1,17 +1,21 @@
-import React from 'react'
-import {posts} from "../Data"
+import { useLocation } from "react-router";
+import { posts } from "../Data";
 
 const Post = () => {
+  const location = useLocation();
+  const path = location.pathname.split("/")[2];
 
-const post = posts[2]  
+  const post = posts.find((posts) => posts.id.toString() === path);
+
+  console.log(location);
   return (
-    <div className='post'>
-      <img src={post.img} alt="" className="imagePost" />
-      <h1 className="postTitle"> {post.title}</h1>
+    <div className="post">
+      <img src={post.img} alt="" className="postImg" />
+      <h1 className="postTitle">{post.title}</h1>
       <p className="postDesc">{post.desc}</p>
       <p className="postLongDesc">{post.longDesc}</p>
     </div>
-  )
-}
+  );
+};
 
-export default Post
+export default Post;
